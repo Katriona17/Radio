@@ -158,5 +158,32 @@ public class RadioTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+
+    void shouldSetPrevRadioStation0() {
+        Radio radio = new Radio();
+
+        radio.setPrevRadioStation(0);
+
+        int expected = 9;
+        int actual = radio.getCurrentRadioStation();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+
+    void shouldSetPrevRadioStationUnder9() {
+        Radio radio = new Radio();
+
+        radio.setPrevRadioStation(8);
+
+        int expected = 7;
+        int actual = radio.getCurrentRadioStation();
+
+        assertEquals(expected, actual);
+
+    }
+
 
 }
