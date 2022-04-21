@@ -173,16 +173,81 @@ public class RadioTest {
 
     @Test
 
-    void shouldSetPrevRadioStationUnder9() {
+    void shouldSetPrevRadioStationOver9() {
         Radio radio = new Radio();
 
-        radio.setPrevRadioStation(8);
+        radio.setPrevRadioStation(10);
 
-        int expected = 7;
+        int expected = 9;
         int actual = radio.getCurrentRadioStation();
 
         assertEquals(expected, actual);
 
+    }
+
+    @Test
+
+    void shouldSetNextRadioStationOver9() {
+        Radio radio = new Radio();
+
+        radio.setNextRadioStation(10);
+
+        int expected = 0;
+        int actual = radio.getCurrentRadioStation();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+
+    void shouldSetIncreaseVolumeOver10() {
+        Radio radio = new Radio();
+
+        radio.setIncreaseVolume(11);
+
+        int expected = 10;
+        int actual = radio.getIncreaseVolume();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+
+    void shouldSetDecreaseVolumeUnder0() {
+        Radio radio = new Radio();
+
+        radio.setDecreaseVolume(-1);
+
+        int expected = 0;
+        int actual = radio.getDecreaseVolume();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+
+    void shouldSetMaxVolumeUnder10() {
+        Radio radio = new Radio();
+
+        radio.setMaxVolume(9);
+
+        int expected = 9;
+        int actual = radio.getMaxVolume();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+
+    void shouldSetMinVolumeOver1() {
+        Radio radio = new Radio();
+
+        radio.setMinVolume(2);
+
+        int expected = 2;
+        int actual = radio.getMinVolume();
+
+        assertEquals(expected, actual);
     }
 
 
