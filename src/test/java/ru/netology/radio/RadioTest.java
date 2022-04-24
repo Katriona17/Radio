@@ -23,7 +23,8 @@ public class RadioTest {
     void shouldSetNextRadioStation() {
         Radio radio = new Radio();
 
-        radio.setNextRadioStation(4);
+        radio.setCurrentRadioStation(4);
+        radio.setNextRadioStation();
 
         int expected = 5;
         int actual = radio.getNextRadioStation();
@@ -35,7 +36,8 @@ public class RadioTest {
     void shouldGetPrevRadioStation() {
         Radio radio = new Radio();
 
-        radio.setPrevRadioStation(0);
+        radio.setCurrentRadioStation(0);
+        radio.setPrevRadioStation();
 
         int expected = 9;
         int actual = radio.getPrevRadioStation();
@@ -47,7 +49,8 @@ public class RadioTest {
     void shouldSetIncreaseVolume() {
         Radio radio = new Radio();
 
-        radio.setIncreaseVolume(3);
+        radio.setCurrentVolume(3);
+        radio.setIncreaseVolume();
 
         int expected = 4;
         int actual = radio.getIncreaseVolume();
@@ -59,7 +62,8 @@ public class RadioTest {
     void shouldSetDecreaseVolume() {
         Radio radio = new Radio();
 
-        radio.setDecreaseVolume(8);
+        radio.setCurrentVolume(8);
+        radio.setDecreaseVolume();
 
         int expected = 7;
         int actual = radio.getDecreaseVolume();
@@ -163,7 +167,8 @@ public class RadioTest {
     void shouldSetPrevRadioStation0() {
         Radio radio = new Radio();
 
-        radio.setPrevRadioStation(0);
+        radio.setCurrentRadioStation(0);
+        radio.setPrevRadioStation();
 
         int expected = 9;
         int actual = radio.getCurrentRadioStation();
@@ -176,7 +181,8 @@ public class RadioTest {
     void shouldSetPrevRadioStationOver9() {
         Radio radio = new Radio();
 
-        radio.setPrevRadioStation(10);
+        radio.setCurrentRadioStation(10);
+        radio.setPrevRadioStation();
 
         int expected = 9;
         int actual = radio.getCurrentRadioStation();
@@ -190,7 +196,8 @@ public class RadioTest {
     void shouldSetNextRadioStationOver9() {
         Radio radio = new Radio();
 
-        radio.setNextRadioStation(10);
+        radio.setCurrentRadioStation(10);
+        radio.setNextRadioStation();
 
         int expected = 0;
         int actual = radio.getCurrentRadioStation();
@@ -203,7 +210,8 @@ public class RadioTest {
     void shouldSetIncreaseVolumeOver10() {
         Radio radio = new Radio();
 
-        radio.setIncreaseVolume(11);
+        radio.setCurrentVolume(11);
+        radio.setIncreaseVolume();
 
         int expected = 10;
         int actual = radio.getIncreaseVolume();
@@ -216,7 +224,8 @@ public class RadioTest {
     void shouldSetDecreaseVolumeUnder0() {
         Radio radio = new Radio();
 
-        radio.setDecreaseVolume(-1);
+        radio.setCurrentVolume(-1);
+        radio.setDecreaseVolume();
 
         int expected = 0;
         int actual = radio.getDecreaseVolume();
