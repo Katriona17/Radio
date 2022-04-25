@@ -33,13 +33,9 @@ public class Radio {
     }
 
     public void setPrevRadioStation() {
-        if (currentRadioStation <= 9) {
-            this.currentRadioStation = currentRadioStation - 1;
-        }
-        if (currentRadioStation <= 0) {
-            this.currentRadioStation = 9;
-        }
 
+        int newStation = currentRadioStation - 1;
+        this.currentRadioStation = newStation;
 
     }
 

@@ -195,7 +195,7 @@ public class RadioTest {
 
         assertEquals(expected, actual);
     }
-
+    /*
     @Test
     void shouldSetPrevRadioStation0() {
         Radio radio = new Radio();
@@ -208,20 +208,7 @@ public class RadioTest {
 
         assertEquals(expected, actual);
     }
-
-    @Test
-    void shouldSetPrevRadioStationOver9() {
-        Radio radio = new Radio();
-
-        radio.setCurrentRadioStation(10);
-        radio.setPrevRadioStation();
-
-        int expected = 10;
-        int actual = radio.getCurrentRadioStation();
-
-        assertEquals(expected, actual);
-
-    }
+    */
 
     @Test
     void shouldSetIncreaseVolumeOver10() {
