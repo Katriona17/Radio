@@ -21,10 +21,10 @@ public class Radio {
 
     public void setNextRadioStation() {
         if (currentRadioStation < 9) {
-            currentRadioStation = currentRadioStation + 1;
+            this.currentRadioStation = currentRadioStation + 1;
         }
-        if (currentRadioStation >= 9) {
-            currentRadioStation = 0;
+        if (currentRadioStation > 9) {
+            this.currentRadioStation = 0;
         }
     }
 
