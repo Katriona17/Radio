@@ -47,8 +47,7 @@ public class RadioTest {
     void shouldSetNextRadioStation() {
         Radio radio = new Radio();
 
-        radio.setCurrentRadioStation(8);
-        radio.setNextRadioStation();
+       radio.setNextRadioStation(8);
 
         int expected = 9;
         int actual = radio.getNextRadioStation();
@@ -57,14 +56,26 @@ public class RadioTest {
     }
 
     @Test
-    void shouldSetNextRadioStation9() {
+    void shouldSetNextRadioStationOver9() {
         Radio radio = new Radio();
 
-        radio.setCurrentRadioStation(9);
-        radio.setNextRadioStation();
+        radio.setNextRadioStation(10);
 
         int expected = 0;
         int actual = radio.getNextRadioStation();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void shouldSetNextRadioStationFrom9To0() {
+        Radio radio = new Radio();
+
+        radio.setCurrentRadioStation(9);
+        radio.setNextRadioStationFrom9To0();
+
+        int expected = 0;
+        int actual = radio.getNextRadioStationFrom9To0();
 
         assertEquals(expected, actual);
     }

@@ -19,13 +19,22 @@ public class Radio {
 
     }
 
-    public void setNextRadioStation() {
+    public void setNextRadioStation(int currentRadioStation) {
         if (currentRadioStation < 9) {
             this.currentRadioStation = currentRadioStation + 1;
         }
         if (currentRadioStation > 9) {
             this.currentRadioStation = 0;
         }
+
+    }
+
+    public int getNextRadioStationFrom9To0() {
+        return currentRadioStation;
+    }
+
+    public void setNextRadioStationFrom9To0() {
+        this. currentRadioStation = 0;
     }
 
     public int getNextRadioStation() {
