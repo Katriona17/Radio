@@ -216,6 +216,18 @@ public class RadioTest {
     }
 
     @Test
+    void shouldSetPrevRadioStationOverMax() {
+        Radio radio = new Radio();
+
+        radio.setPrevRadioStation(11);
+
+        int expected = 0;
+        int actual = radio.getPrevRadioStation();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
     void shouldSetCurrentVolume() {
         Radio radio = new Radio();
 
