@@ -168,13 +168,48 @@ public class RadioTest {
     }
 
     @Test
+    void shouldSetPrevRadioStationMax() {
+        Radio radio = new Radio(15);
+
+        radio.setPrevRadioStation(15);
+
+        int expected = 14;
+        int actual = radio.getPrevRadioStation();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
     void shouldSetPrevRadioStationUnder10() {
         Radio radio = new Radio();
-
 
         radio.setPrevRadioStation(6);
 
         int expected = 5;
+        int actual = radio.getPrevRadioStation();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void shouldSetPrevRadioStation10() {
+        Radio radio = new Radio();
+
+        radio.setPrevRadioStation(10);
+
+        int expected = 9;
+        int actual = radio.getPrevRadioStation();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void shouldSetPrevRadioStationMin() {
+        Radio radio = new Radio();
+
+        radio.setPrevRadioStation(0);
+
+        int expected = 9;
         int actual = radio.getPrevRadioStation();
 
         assertEquals(expected, actual);
